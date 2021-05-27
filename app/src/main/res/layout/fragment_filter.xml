@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.filter.FilterFragment">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
+            app:cardCornerRadius="10dp"
+            android:outlineSpotShadowColor="#272424">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:background="@drawable/bg">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="DATE"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="#34d399"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintTop_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <Button
+                    android:id="@+id/fromDate"
+                    android:layout_width="160dp"
+                    android:layout_height="45dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="50dp"
+                    android:text="from date"
+                    android:background="@color/white"
+                    android:textColor="@color/black"
+                    android:drawableStart="@drawable/date"
+                    app:layout_constraintTop_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <Button
+                    android:id="@+id/toDate"
+                    android:layout_width="160dp"
+                    android:layout_height="45dp"
+                    android:layout_marginStart="190dp"
+                    android:layout_marginTop="50dp"
+                    android:text="to date"
+                    android:background="@color/white"
+                    android:textColor="@color/black"
+                    android:drawableStart="@drawable/date"
+                    app:layout_constraintTop_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/fromDate"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            app:cardCornerRadius="10dp"
+            android:layout_marginTop="200dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="210dp"
+                android:background="@drawable/bg">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="REPORT STATUS"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="#34d399"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintTop_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <Button
+                    android:id="@+id/waiting"
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="60dp"
+                    android:text="Menunggu"
+                    android:textColor="@color/black"
+                    android:background="@drawable/button"
+                    app:layout_constraintTop_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <Button
+                    android:id="@+id/koordinasi"
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="122dp"
+                    android:layout_marginTop="60dp"
+                    android:text="Koordinasi"
+                    android:textColor="@color/black"
+                    android:background="@drawable/button"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/waiting"/>
+
+                <Button
+                    android:id="@+id/diposisi"
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="122dp"
+                    android:layout_marginTop="60dp"
+                    android:text="Diposisi"
+                    android:textColor="@color/black"
+                    android:background="@drawable/button"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/koordinasi"/>
+
+                <Button
+                    android:id="@+id/proses"
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="20dp"
+                    android:text="Menunggu"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/button"
+                    app:layout_constraintTop_toBottomOf="@id/waiting"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <Button
+                    android:id="@+id/finish"
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="122dp"
+                    android:text="Selesai"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/button"
+                    app:layout_constraintTop_toBottomOf="@id/koordinasi"
+                    app:layout_constraintStart_toStartOf="@id/proses"/>
+
+                <Button
+                    android:id="@+id/denied"
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="122dp"
+                    android:text="Ditolak"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/button"
+                    app:layout_constraintTop_toBottomOf="@id/diposisi"
+                    app:layout_constraintStart_toStartOf="@id/finish"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            app:cardCornerRadius="10dp"
+            android:layout_marginTop="437dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@drawable/bg">
+
+                <TextView
+                    android:id="@+id/categoryTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CATEGORY"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="#34d399"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintTop_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <CheckBox
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="70dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/chooseTxt"/>
+
+                <TextView
+                    android:id="@+id/chooseTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#34d399"
+                    android:text="Choose all"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="150dp"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/categoryTxt"/>
+
+
+                <Button
+                    android:id="@+id/sampah"
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="60dp"
+                    android:text="Sampah"
+                    android:textColor="@color/black"
+                    android:background="@drawable/button"
+                    app:layout_constraintTop_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <Button
+                    android:id="@+id/pohon"
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="122dp"
+                    android:layout_marginTop="60dp"
+                    android:text="pohon"
+                    android:textColor="@color/black"
+                    android:background="@drawable/button"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/sampah"/>
+
+                <Button
+                    android:id="@+id/jalan"
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="122dp"
+                    android:layout_marginTop="60dp"
+                    android:text="Jalan"
+                    android:textColor="@color/black"
+                    android:background="@drawable/button"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/pohon"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            app:cardCornerRadius="10dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="615dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="265dp"
+                android:background="@drawable/bg">
+
+                <TextView
+                    android:id="@+id/subCategoryTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SUB CATEGORY"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="#34d399"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintTop_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <CheckBox
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="70dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/subChooseTxt"/>
+
+                <TextView
+                    android:id="@+id/subChooseTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#34d399"
+                    android:text="Choose all"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="110dp"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/subCategoryTxt"/>
+
+                <Button
+                    android:id="@+id/sampahBerantakan"
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="60dp"
+                    android:text="Sampah Berantakan"
+                    android:textColor="@color/black"
+                    android:background="@drawable/button"
+                    app:layout_constraintTop_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <Button
+                    android:id="@+id/sampahMenumpuk"
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="122dp"
+                    android:layout_marginTop="60dp"
+                    android:text="Sampah Menumpuk"
+                    android:textColor="@color/black"
+                    android:background="@drawable/button"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/sampahBerantakan"/>
+
+                <Button
+                    android:id="@+id/sampahBau"
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="122dp"
+                    android:layout_marginTop="60dp"
+                    android:text="Sampah Berbau"
+                    android:textColor="@color/black"
+                    android:background="@drawable/button"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/sampahMenumpuk"/>
+
+                <Button
+                    android:id="@+id/pohonTumbang"
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="20dp"
+                    android:text="Pohon Tumbang"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/button"
+                    app:layout_constraintTop_toBottomOf="@id/sampahBerantakan"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <Button
+                    android:id="@+id/pohonRimbun"
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="122dp"
+                    android:text="Pohon Rimbun"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/button"
+                    app:layout_constraintTop_toBottomOf="@id/sampahMenumpuk"
+                    app:layout_constraintStart_toStartOf="@id/pohonTumbang"/>
+
+                <Button
+                    android:id="@+id/jalanBerlubang"
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="122dp"
+                    android:text="Jalan Berlubang"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/button"
+                    app:layout_constraintTop_toBottomOf="@id/sampahBau"
+                    app:layout_constraintStart_toStartOf="@id/pohonRimbun"/>
+
+                <Button
+                    android:id="@+id/jalanTergenang"
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="20dp"
+                    android:text="Jalan Tergenang"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/button"
+                    app:layout_constraintTop_toBottomOf="@id/pohonTumbang"
+                    app:layout_constraintStart_toStartOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </FrameLayout>
+
+</ScrollView>

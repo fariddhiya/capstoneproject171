@@ -2,14 +2,21 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.dicoding.capstoneproject">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
+        android:name=".BaseApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.CapstoneProject">
-        <activity android:name="com.dicoding.capstoneproject.ui.home.HomeActivity"
+        android:theme="@style/Theme.CapstoneProject"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".ui.filter.FilterActivity"></activity>
+        <activity android:name=".ui.bookmark.BookmarkActivity" />
+        <activity
+            android:name=".ui.home.HomeActivity"
             android:theme="@style/FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

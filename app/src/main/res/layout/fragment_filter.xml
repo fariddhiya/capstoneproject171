@@ -84,6 +84,7 @@
                 android:background="@drawable/bg">
 
                 <TextView
+                    android:id="@+id/txtstatus"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="REPORT STATUS"
@@ -95,6 +96,23 @@
                     app:layout_constraintTop_toBottomOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"/>
+
+<!--                <com.google.android.material.chip.ChipGroup-->
+<!--                    android:id="@+id/chip"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/txtstatus"-->
+<!--                    app:layout_constraintStart_toStartOf="parent">-->
+
+<!--                    <com.google.android.material.chip.Chip-->
+<!--                        android:layout_width="110dp"-->
+<!--                        android:layout_height="50dp"-->
+<!--                        />-->
+
+<!--                </com.google.android.material.chip.ChipGroup>-->
+
+
 
                 <Button
                     android:id="@+id/waiting"
@@ -138,7 +156,7 @@
                     android:layout_width="110dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="20dp"
-                    android:text="Menunggu"
+                    android:text="Proses"
                     android:textColor="@color/black"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/button"
@@ -172,6 +190,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/categorycv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
@@ -257,140 +276,25 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
-            app:cardCornerRadius="10dp"
-            android:layout_marginBottom="20dp"
-            android:layout_marginTop="615dp">
+        <Button
+            android:id="@+id/reset"
+            android:layout_width="110dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="90dp"
+            android:layout_marginTop="620dp"
+            android:text="Reset"
+            android:textColor="@color/black"
+            android:background="@drawable/button" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="265dp"
-                android:background="@drawable/bg">
-
-                <TextView
-                    android:id="@+id/subCategoryTxt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="SUB CATEGORY"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
-                    android:textColor="#34d399"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="15dp"
-                    app:layout_constraintTop_toBottomOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"/>
-
-                <CheckBox
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginLeft="70dp"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="@id/subChooseTxt"/>
-
-                <TextView
-                    android:id="@+id/subChooseTxt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#34d399"
-                    android:text="Choose all"
-                    android:textSize="15dp"
-                    android:layout_marginLeft="110dp"
-                    android:layout_marginTop="15dp"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/subCategoryTxt"/>
-
-                <Button
-                    android:id="@+id/sampahBerantakan"
-                    android:layout_width="110dp"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="60dp"
-                    android:text="Sampah Berantakan"
-                    android:textColor="@color/black"
-                    android:background="@drawable/button"
-                    app:layout_constraintTop_toBottomOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"/>
-
-                <Button
-                    android:id="@+id/sampahMenumpuk"
-                    android:layout_width="110dp"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="122dp"
-                    android:layout_marginTop="60dp"
-                    android:text="Sampah Menumpuk"
-                    android:textColor="@color/black"
-                    android:background="@drawable/button"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="@id/sampahBerantakan"/>
-
-                <Button
-                    android:id="@+id/sampahBau"
-                    android:layout_width="110dp"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="122dp"
-                    android:layout_marginTop="60dp"
-                    android:text="Sampah Berbau"
-                    android:textColor="@color/black"
-                    android:background="@drawable/button"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="@id/sampahMenumpuk"/>
-
-                <Button
-                    android:id="@+id/pohonTumbang"
-                    android:layout_width="110dp"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="20dp"
-                    android:text="Pohon Tumbang"
-                    android:textColor="@color/black"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/button"
-                    app:layout_constraintTop_toBottomOf="@id/sampahBerantakan"
-                    app:layout_constraintStart_toStartOf="parent"/>
-
-                <Button
-                    android:id="@+id/pohonRimbun"
-                    android:layout_width="110dp"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="122dp"
-                    android:text="Pohon Rimbun"
-                    android:textColor="@color/black"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/button"
-                    app:layout_constraintTop_toBottomOf="@id/sampahMenumpuk"
-                    app:layout_constraintStart_toStartOf="@id/pohonTumbang"/>
-
-                <Button
-                    android:id="@+id/jalanBerlubang"
-                    android:layout_width="110dp"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="122dp"
-                    android:text="Jalan Berlubang"
-                    android:textColor="@color/black"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/button"
-                    app:layout_constraintTop_toBottomOf="@id/sampahBau"
-                    app:layout_constraintStart_toStartOf="@id/pohonRimbun"/>
-
-                <Button
-                    android:id="@+id/jalanTergenang"
-                    android:layout_width="110dp"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="20dp"
-                    android:text="Jalan Tergenang"
-                    android:textColor="@color/black"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/button"
-                    app:layout_constraintTop_toBottomOf="@id/pohonTumbang"
-                    app:layout_constraintStart_toStartOf="parent"/>
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </androidx.cardview.widget.CardView>
+        <Button
+            android:id="@+id/apply"
+            android:layout_width="110dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="213dp"
+            android:layout_marginTop="620dp"
+            android:text="Apply"
+            android:textColor="@color/black"
+            android:background="@drawable/button" />
 
     </FrameLayout>
 

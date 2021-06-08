@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_button"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:background="@color/white_smokes"
+    android:elevation="100dp"
+    tools:context=".ui.takephoto.TakePhotoFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pilih_input"
+        android:textColor="@color/black"
+        android:layout_marginTop="8dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btn_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_camera"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:backgroundTint="@color/Mercury"
+            android:drawableTop="@drawable/ic_baseline_camera_alt_24"
+            android:elevation="10dp"
+            android:layout_margin="8dp"
+            />
+
+        <Button
+            android:id="@+id/btn_gallery"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/ic_baseline_collections_24"
+            android:backgroundTint="@color/Mercury"
+            android:text="@string/btn_gallery"
+            android:elevation="10dp"
+            android:layout_margin="8dp"/>
+    </LinearLayout>
+
+
+</LinearLayout>

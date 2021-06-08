@@ -7,4 +7,14 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="sapphire_light">#063B56</color>
+    <color name="sapphire">#062158</color>
+    <color name="oslo_grey">#8D8F8F</color>
+    <color name="nero">#161616</color>
+    <color name="Mercury">#D8D4D4</color>
+    <color name="white_smokes">#EFEDED</color>
+
+
+    <color name="leku_app_blue">#3DA8E1</color>
+    <color name="leku_app_strong_blue">#053B58</color>
 </resources>

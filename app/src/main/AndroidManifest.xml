@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.dicoding.capstoneproject">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <uses-feature android:name="android.hardware.location.network" android:required="false" />
+    <uses-feature android:name="android.hardware.location.gps" android:required="false"  />
 
     <application
         android:allowBackup="true"
@@ -8,14 +19,41 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.CapstoneProject">
-        <activity android:name=".MainActivity">
+        android:theme="@style/Theme.CapstoneProject"
+        android:usesCleartextTraffic="true"
+        tools:ignore="GoogleAppIndexingWarning"
+        tools:replace="android:allowBackup"
+        tools:targetApi="m">
+        <activity android:name=".ui.donecheck.DoneActivity"
+            android:theme="@style/Theme.CapstoneProject.NoActionBar" />
+        <activity android:name=".ui.similiarreport.SimiliarReportActivity" />
+        <activity android:name=".ui.category.CategoryActivity" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBp45bjdqqWT1pvSOg4CxZc672Pv50q9ps" />
+
+        <activity android:name=".ui.map.MapActivity"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
+            android:windowSoftInputMode="adjustPan"/>
+        <activity android:name=".ui.confirmationreport.ConfirmationReportActivity" />
+        <activity android:name=".ui.inputreport.InputDescriptionActivity" />
+        <activity android:name=".ui.walkthrough.WalkthroughActivity" />
+        <activity
+            android:name=".ui.splashscreen.SplashScreenActivity"
+            android:theme="@style/Theme.CapstoneProject.NoActionBar" />
+        <activity
+            android:name=".MainActivity"
+            android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.category.CatJalanActivity" />
+        <activity android:name=".ui.category.CatPohonActivity" />
+        <activity android:name=".ui.category.CatSampahActivity" />
     </application>
 
 </manifest>

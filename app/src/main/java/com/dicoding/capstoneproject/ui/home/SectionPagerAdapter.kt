@@ -1,4 +1,4 @@
-@file:Suppress("DEPRECATION")
+
 
 package com.dicoding.capstoneproject.ui.home
 
@@ -12,7 +12,6 @@ import com.dicoding.capstoneproject.ui.filter.FilterFragment
 import com.dicoding.capstoneproject.R
 import com.dicoding.capstoneproject.ui.report.ReportListFragment
 
-@Suppress("DEPRECATION")
 class SectionPagerAdapter(private val context: Context, fm: FragmentManager):
 FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT){
 

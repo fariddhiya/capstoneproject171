@@ -7,28 +7,36 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     tools:context=".ui.home.HomeActivity">
-
-    <androidx.appcompat.widget.SearchView
-        android:id="@+id/sv"
+    
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/banner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        android:background="@drawable/search_tab"
-        android:contextClickable="true"
-        app:layout_constraintTop_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        android:layout_margin="10dp"
+        android:scaleType="fitXY"
+        app:riv_corner_radius="20dp"
+        android:src="@drawable/banner"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+<!--    <ImageView-->
+<!--        android:layout_width="411dp"-->
+<!--        android:layout_height="100dp"-->
+<!--        android:src="@drawable/bg"-->
+<!--        android:padding="10dp"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"/>-->
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:background="@drawable/tab"
-        app:tabIndicatorColor="@color/black"
-        app:tabSelectedTextColor="@color/black"
-        app:layout_constraintTop_toBottomOf="parent"
+        android:layout_marginTop="155dp"
+        app:tabIndicator="@drawable/tab"
+        app:tabIndicatorGravity="stretch"
+        app:layout_constraintTop_toBottomOf="@id/banner"
         app:layout_constraintTop_toTopOf="parent"
         app:tabTextColor="#8F000000" />
 

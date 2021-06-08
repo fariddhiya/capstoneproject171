@@ -3,14 +3,20 @@ package com.dicoding.capstoneproject.ui.home
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.widget.SearchView
+import com.dicoding.capstoneproject.data.ReportResponse
+import com.dicoding.capstoneproject.data.Value
 import com.dicoding.capstoneproject.databinding.ActivityHomeBinding
+import com.dicoding.capstoneproject.databinding.ActivityReportBinding
+import com.dicoding.capstoneproject.ui.report.ReportViewModel
 
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class HomeActivity : AppCompatActivity() {
 
-lateinit var binding: ActivityHomeBinding
+    lateinit var binding: ActivityHomeBinding
+    private var reportData: ArrayList<Value> = ArrayList()
+    private  lateinit var viewModel: ReportViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,22 +28,8 @@ lateinit var binding: ActivityHomeBinding
         binding.vwList.adapter = sectionPagerAdapter
         binding.tl.setupWithViewPager(binding.vwList)
 
-        binding.sv.apply {
-            setOnCloseListener {
-                this.onActionViewExpanded()
-                search()
-            }
-        }
         supportActionBar?.elevation = 0f
     }
 
-    private fun search() {
-        binding.sv.apply {
-            setOnQueryTextListener(object : SearchView.OnQueryTextListener{
-                override fun onQueryTextSubmit(query: String?): Boolean {
-                    TODO("Not yet implemented")
-                }
-            })
-        }
-    }
+
 }

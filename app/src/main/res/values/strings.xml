@@ -10,4 +10,6 @@
     <string name="title_home">Home</string>
     <string name="title_add">Add</string>
     <string name="title_profile">Profile</string>
+    <string name="insertBookmark">Report Has been Added from Bookmark</string>
+    <string name="removeBookmark">Report has been removed from Bookmark</string>
 </resources>

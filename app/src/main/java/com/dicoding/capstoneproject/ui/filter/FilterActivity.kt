@@ -26,40 +26,57 @@ class FilterActivity : AppCompatActivity() {
         binding = ActivityFilterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setupReyclerView()
+        setData()
     }
 
-    private fun setupReyclerView() {
+    private fun setData() {
         reportGridAdapter = ReportGridAdapter()
-
-        with(binding.reportRv) {
-            adapter = reportGridAdapter
-            layoutManager = GridLayoutManager(context, 2)
-            setHasFixedSize(true)
 
             when(CATEGORY) {
                 "jalan" -> {
                     filterViewModel.getRoad().observe(this@FilterActivity, {
                         if (it.isNotEmpty()) {
                             reportGridAdapter.setReport(it)
+                            setRecyclerView()
                         }
+                        supportActionBar?.elevation = 0f
+                        supportActionBar?.title="Jalan"
                     })
                 }
                 "pohon" -> {
                     filterViewModel.getTree().observe(this@FilterActivity, {
                         if (it.isNotEmpty()) {
                             reportGridAdapter.setReport(it)
+                            setRecyclerView()
+
                         }
+                        supportActionBar?.elevation = 0f
+                        supportActionBar?.title="Pohon"
+
                     })
                 }
                 "sampah" -> {
                     filterViewModel.getGarbage().observe(this@FilterActivity, {
                         if (it.isNotEmpty()) {
                             reportGridAdapter.setReport(it)
+                            setRecyclerView()
                         }
+                        supportActionBar?.elevation = 0f
+                        supportActionBar?.title="Sampah"
                     })
                 }
             }
+
+
+    }
+
+    private fun setRecyclerView(){
+
+        with(binding.reportRv) {
+            adapter = reportGridAdapter
+            layoutManager = GridLayoutManager(context, 2)
+            setHasFixedSize(true)
+
         }
     }
 }

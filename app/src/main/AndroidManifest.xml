@@ -13,8 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CapstoneProject"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.filter.FilterActivity"></activity>
-        <activity android:name=".ui.bookmark.BookmarkActivity" />
+        <activity android:name=".ui.filter.BottomSheetDialog"></activity>
+        <activity android:name=".ui.filter.FilterActivity" />
         <activity
             android:name=".ui.home.HomeActivity"
             android:theme="@style/FullScreen">

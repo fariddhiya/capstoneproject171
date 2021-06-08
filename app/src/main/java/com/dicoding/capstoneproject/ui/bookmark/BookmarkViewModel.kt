@@ -7,8 +7,8 @@ import androidx.lifecycle.viewModelScope
 import androidx.paging.PagedList
 import com.dicoding.capstoneproject.utils.Resource
 import com.dicoding.capstoneproject.fav.Bookmark
-import com.dicoding.capstoneproject.repo.BookmarkRepo
 import com.dicoding.capstoneproject.repo.repointer.BookmarkRepository
+import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -36,11 +36,13 @@ private val bookmarkRepository: BookmarkRepository) : ViewModel() {
 
     fun deleteFromBookmark(bookmark: Bookmark) = viewModelScope.launch {
         bookmarkRepository.deleteBookmark(bookmark)
-        _deleteBookmarkStatus.postValue(Resource.Success(bookmark, "Item removed from bookmark"))
+        _deleteBookmarkStatus.postValue(Resource.Success(bookmark, "Report removed from bookmark"))
     }
 
     fun insertToBookmark(bookmark: Bookmark) = viewModelScope.launch {
         bookmarkRepository.insertBookmark(bookmark)
-        _insertBookmarkStatus.postValue(Resource.Success(bookmark, "Item added to Bookmark"))
+        _insertBookmarkStatus.postValue(Resource.Success(bookmark, "Report added to Bookmark"))
     }
+
+
 }

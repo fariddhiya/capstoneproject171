@@ -21,7 +21,6 @@
     <string name="ex_description_3">Keterangan tambahan [patokan alamat/ NIK/ No. KJP/  No. Pelanggan/ Slip Gaji]:</string>
     <string name="ex_description_4">Patokannya depan Halte Trans Jakarta Balai Kota, nah depan haltenya ada lubang pak, bisa membahayakan pengendara dan orang lain. Kalau hujan juga menyebabkan genangan kecil pak, oleh karena itu butuh cepat perbaikan pada lubang tersebut. Terima kasih pak</string>
     <string name="helper_description">Minimum Tulisan</string>
-    <string name="title_home">home</string>
     <string name="title_about_us">about us</string>
 
     <string name="btn_gallery">Gallery</string>
@@ -67,4 +66,14 @@
     <string name="launch_map_picker_with_style" translatable="false">LAUNCH MAP WITH STYLE</string>
     <string name="leku_lib_version" translatable="false">version 8.0.0</string>
     <string name="success_report">Laporan berhasil ditambahkan</string>
+
+    <string name="Report">Report</string>
+    <string name="Filter">Filter</string>
+    <string name="Bookmark">Bookmark</string>
+    <string name="title_activity_bottom_navigation">Capstone</string>
+    <string name="title_home">Home</string>
+    <string name="title_add">Add</string>
+    <string name="title_profile">Profile</string>
+    <string name="insertBookmark">Report Has been Added from Bookmark</string>
+    <string name="removeBookmark">Report has been removed from Bookmark</string>
 </resources>

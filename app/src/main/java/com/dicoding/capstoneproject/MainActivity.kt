@@ -1,7 +1,5 @@
 package com.dicoding.capstoneproject
 
-import android.content.Context
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -13,12 +11,6 @@ import com.dicoding.capstoneproject.utils.Const.CUSTOM_FRAGMENT
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
-
-    companion object{
-        fun start(context: Context){
-            context.startActivity(Intent(context, MainActivity::class.java))
-        }
-    }
     private lateinit var binding: ActivityMainBinding
 
 

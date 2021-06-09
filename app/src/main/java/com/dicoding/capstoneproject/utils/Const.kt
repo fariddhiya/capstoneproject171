@@ -2,11 +2,7 @@ package com.dicoding.capstoneproject.utils
 
 object Const {
     const val CUSTOM_FRAGMENT = "custom_fragment"
-    const val PERMISSION_REQUEST_ACCESS_FINE_LOCATION = 100
-
     const val KEY_CATEGORY = "key_category"
-    const val FRAGMENT_CATEGORY = "fragment_category"
-    const val KEY_RESULT_IMAGE = "key_result_image"
     const val KEY_SUB_CATEGORY = "key_sub_category"
     const val KEY_DESCRIPTION = "key_description"
     const val KEY_SIMILIAR_ENTITY = "key_similiar_entity"

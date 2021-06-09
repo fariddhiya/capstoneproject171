@@ -8,9 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import com.dicoding.capstoneproject.databinding.ActivityCategoryBinding
 import com.dicoding.capstoneproject.model.ReportEntity
-import com.dicoding.capstoneproject.utils.Const.FRAGMENT_CATEGORY
 import com.dicoding.capstoneproject.utils.Const.KEY_CATEGORY
-import com.dicoding.capstoneproject.utils.Const.KEY_MAP
 import com.dicoding.capstoneproject.utils.Const.KEY_PHOTO
 import java.io.File
 

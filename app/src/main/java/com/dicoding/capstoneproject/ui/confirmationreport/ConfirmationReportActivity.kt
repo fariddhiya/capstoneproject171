@@ -75,15 +75,20 @@ class ConfirmationReportActivity : AppCompatActivity() {
         Log.d("farid123", reportEntity.toString())
         retrofit.uploadReport(reportEntity).enqueue(object : Callback<ReportResp> {
             override fun onResponse(call: Call<ReportResp>, response: Response<ReportResp>) {
+                Log.d("berhasil", response.body().toString())
                 val responseReport = response.body()?.body
-                if (responseReport?.similarSentences == null){
-                    Toast.makeText(this@ConfirmationReportActivity, "Laporan berhasil ditambahkan", Toast.LENGTH_SHORT).show()
+                val test = response.body()?.body?.similarSentences
+                if (test == null) {
+                    Toast.makeText(
+                        this@ConfirmationReportActivity,
+                        "Laporan berhasil ditambahkan",
+                        Toast.LENGTH_SHORT
+                    ).show()
                     val intent = Intent(this@ConfirmationReportActivity, DoneActivity::class.java)
                     intent.addFlags(FLAG_ACTIVITY_CLEAR_TOP)
                     startActivity(intent)
                     finish()
-                } else{
-
+                } else {
                     val resp = response.body()?.body?.similarSentences?.get(0)
                     Log.d("fariddd", resp.toString())
                     val intents= Intent(this@ConfirmationReportActivity, SimiliarReportActivity::class.java)
@@ -94,9 +99,9 @@ class ConfirmationReportActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<ReportResp>, t: Throwable) {
-                TODO("Not yet implemented")
+                Log.d("gagal", call.toString())
+                Log.d("gagal", t.toString())
             }
-
         })
     }
 }

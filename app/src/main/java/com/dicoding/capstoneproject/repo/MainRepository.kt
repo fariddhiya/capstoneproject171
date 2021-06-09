@@ -52,4 +52,14 @@ class MainRepository @Inject constructor(
         }
     }
 
+    suspend fun getReportById(reportId: Int): Resource<ReportResponse>{
+        apiService.getReportById(reportId).let { response ->
+            if (response.isSuccessful) {
+                response.body()?.let {
+                    return Resource.Success(it)
+                }
+            }
+            return Resource.Error(response.message())
+        }
+    }
 }

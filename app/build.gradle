@@ -92,6 +92,7 @@ dependencies {
     implementation 'com.romandanylyk:pageindicatorview:1.0.2@aar'
     implementation 'com.github.iammert:ReadableBottomBar:0.2'
     implementation 'com.github.mancj:MaterialSearchBar:0.8.1'
+    implementation 'com.etebarian:meow-bottom-navigation:1.0.4'
 
     // Image Picker
     implementation 'com.github.esafirm:android-image-picker:2.4.5'

@@ -161,6 +161,12 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
                     .addOnSuccessListener { fetchPlaceResponse ->
                         val place = fetchPlaceResponse.place
                         Log.i("mytag", "Place found: " + place.name)
+                        Log.d("salsa", placeId)
+                        Log.d("salsa", placeFields.toString())
+                        Log.d("salsa", place.latLng?.latitude.toString())
+                        Log.d("salsa", place.latLng?.longitude.toString())
+                        reportEntity.latitude = place.latLng?.latitude
+                        reportEntity.longitude = place.latLng?.longitude
                         val latLngOfPlace = place.latLng
                         if (latLngOfPlace != null) {
                             mMap!!.moveCamera(
@@ -184,12 +190,15 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
         })
 
         binding.btnFind.setOnClickListener(View.OnClickListener {
+            getDeviceLocation()
             val currentMarkerLocation = mMap!!.cameraPosition.target
             binding.rippleBg.startRippleAnimation()
             Handler().postDelayed({
+                var intent = Intent(this, CategoryActivity::class.java)
+                Log.d("salsa", reportEntity.toString())
                 binding.rippleBg.stopRippleAnimation()
-                intent.putExtra(KEY_PHOTO, reportEntity)
-                startActivity(Intent(this@MapActivity, CategoryActivity::class.java))
+                intent.putExtra("test", reportEntity)
+                startActivity(intent)
             }, 3000)
         })
     }
@@ -272,9 +281,12 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
                             CameraUpdateFactory.newLatLngZoom(
                                 LatLng(
                                     mLastKnownLocation!!.latitude, mLastKnownLocation!!.longitude
+
                                 ), DEFAULT_ZOOM
                             )
                         )
+                        reportEntity.longitude = mLastKnownLocation!!.longitude
+                        reportEntity.latitude = mLastKnownLocation!!.latitude
                     } else {
                         val locationRequest = LocationRequest.create()
                         locationRequest.interval = 10000

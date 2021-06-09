@@ -1,5 +1,6 @@
 package com.dicoding.capstoneproject.ui.report
 
+import android.content.Intent
 import android.os.Build
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,15 +8,10 @@ import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 import com.dicoding.capstoneproject.data.Value
 import com.dicoding.capstoneproject.databinding.ActivityReportBinding
-import com.dicoding.capstoneproject.ui.bookmark.BookmarkViewModel
-import com.dicoding.capstoneproject.utils.Helper.formatTo
+import com.dicoding.capstoneproject.ui.detailreport.DetailReportActivity
+import com.dicoding.capstoneproject.ui.detailreport.DetailReportActivity.Companion.EXTRA_MOVE
 import com.dicoding.capstoneproject.utils.Helper.loadImage
-import com.dicoding.capstoneproject.utils.Helper.toDate
-import java.text.SimpleDateFormat
-import java.time.Instant
 import java.time.LocalDateTime
-import java.time.ZoneId
-import java.time.ZonedDateTime
 import java.time.format.DateTimeFormatter
 import java.util.*
 import kotlin.collections.ArrayList
@@ -42,6 +38,11 @@ class ReportGridAdapter() : RecyclerView.Adapter<ReportGridAdapter.GridViewHolde
                 reportPhoto.loadImage(reportEntity.foto)
                 reportStatus.text = reportEntity.kategori
 
+                itemView.setOnClickListener{
+                    val intent = Intent(itemView.context, DetailReportActivity::class.java)
+                    intent.putExtra(EXTRA_MOVE, reportEntity.idLaporan)
+                    itemView.context.startActivity(intent)
+                }
             }
         }
     }

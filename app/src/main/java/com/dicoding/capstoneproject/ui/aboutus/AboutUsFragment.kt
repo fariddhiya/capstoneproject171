@@ -11,7 +11,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.dicoding.capstoneproject.adapter.MemberAdapter
 import com.dicoding.capstoneproject.databinding.FragmentAboutUsBinding
 import com.dicoding.capstoneproject.viewmodel.MemberViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class AboutUsFragment : Fragment() {
     private lateinit var memberViewModel: MemberViewModel
     private lateinit var binding: FragmentAboutUsBinding

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    android:id="@+id/cl"
+    tools:context=".ui.detailreport.DetailReportActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/report_image"
+            android:layout_width="412dp"
+            android:layout_height="240dp"
+            android:background="@color/sapphire"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/category_sub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textSize="18sp"
+            android:maxLines="2"
+            android:text="ISI LAPORAN"
+            android:textColor="@color/black"
+            android:layout_marginStart="10dp"
+            app:layout_constraintTop_toBottomOf="@id/report_image"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_marginTop="25dp"
+            android:background="#309158"
+            app:layout_constraintTop_toBottomOf="@id/category_sub"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_favorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="340dp"
+            android:src="@drawable/btn_bookmark"
+            android:layout_marginTop="210dp"
+            app:backgroundTint="#59061E55"
+            app:tint="@color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/txtReport"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="DETAIL LAPORAN"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="50dp"
+            app:layout_constraintTop_toBottomOf="@id/category_sub"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/txtDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="10dp"
+            android:textSize="15sp"
+            android:text="Tanggal Masuk"
+            app:layout_constraintTop_toBottomOf="@id/txtReport"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/dateReport"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="10dp"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:text="Tanggal Masuk"
+            app:layout_constraintTop_toBottomOf="@id/txtDate"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/txtKategori"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="10dp"
+            android:textSize="15sp"
+            android:text="Kategori"
+            app:layout_constraintTop_toBottomOf="@id/dateReport"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/categoryReport"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="10dp"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:text="Sampah, pohon, jalan rusak"
+            app:layout_constraintTop_toBottomOf="@id/txtKategori"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/statusReport"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Status Laporan"
+            android:textSize="15sp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@id/categoryReport"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/menunggu"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="10dp"
+            android:text="Menunggu"
+            android:textColor="@color/white"
+            android:background="@color/red"
+            android:textAlignment="center"
+            android:textSize="15sp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintTop_toBottomOf="@id/statusReport"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_marginTop="60dp"
+            android:background="#309158"
+            app:layout_constraintTop_toBottomOf="@id/statusReport"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/banner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginStart="12dp"
+            android:scaleType="fitXY"
+            app:riv_corner_radius="20dp"
+            android:src="@drawable/banner"
+            app:layout_constraintTop_toBottomOf="@id/view1"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

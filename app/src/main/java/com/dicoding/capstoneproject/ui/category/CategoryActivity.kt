@@ -23,9 +23,10 @@ class CategoryActivity : AppCompatActivity() {
 
         val extras = intent.extras
         if (extras != null){
-            reportEntity = extras.getParcelable(KEY_PHOTO)!!
-            Log.d("test", reportEntity.toString())
+            reportEntity = extras.getParcelable("test")!!
+            Log.d("test123", reportEntity.toString())
         }
+        Log.d("test123", reportEntity.toString())
 
         binding.btnJalan.setOnClickListener {
             reportEntity.category = "jalan"

@@ -23,6 +23,7 @@ import com.dicoding.capstoneproject.retrofit.API
 import com.dicoding.capstoneproject.retrofit.RetroInstance
 import com.dicoding.capstoneproject.ui.category.CategoryActivity
 import com.dicoding.capstoneproject.ui.map.MapActivity
+import com.dicoding.capstoneproject.ui.walkthrough.WalkthroughActivity
 import com.dicoding.capstoneproject.utils.Const.KEY_PHOTO
 import com.dicoding.capstoneproject.utils.Const.TAKE_PHOTO
 import com.esafirm.imagepicker.features.ImagePicker
@@ -32,6 +33,7 @@ import com.karumi.dexter.listener.PermissionDeniedResponse
 import com.karumi.dexter.listener.PermissionGrantedResponse
 import com.karumi.dexter.listener.PermissionRequest
 import com.karumi.dexter.listener.single.PermissionListener
+import dagger.hilt.android.AndroidEntryPoint
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
@@ -41,7 +43,7 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import java.io.File
 
-
+@AndroidEntryPoint
 class TakePhotoFragment : DialogFragment() {
     private lateinit var binding: FragmentTakePhotoBinding
     private lateinit var reportEntity: ReportEntity
@@ -101,7 +103,6 @@ class TakePhotoFragment : DialogFragment() {
         binding.btnGallery.setOnClickListener {
             openGallery()
         }
-
     }
 
     private fun openGallery(){
@@ -128,6 +129,7 @@ class TakePhotoFragment : DialogFragment() {
             val part = MultipartBody.Part.createFormData("filepath", imgFile.name, reqBody)
 
             val retrofit: Retrofit = RetroInstance().getRetrofitClient(TAKE_PHOTO)
+            Toast.makeText(context, "Mohon tunggu sebentar, sistem sedang memproses.", Toast.LENGTH_SHORT).show()
             val uploadApi: API = retrofit.create(API::class.java)
             val call: Call<ImageResponse> = uploadApi.uploadImage(part)
             call.enqueue(object : Callback<ImageResponse>{
@@ -142,8 +144,11 @@ class TakePhotoFragment : DialogFragment() {
                     Log.d("Farid", responseBody)
 
                     reportEntity.img_url = resultImage?.bodyResponse?.filepath
-                    Toast.makeText(context, resultImage?.bodyResponse?.message, Toast.LENGTH_SHORT).show()
-                    activityResult()
+//                    Toast.makeText(context, resultImage?.bodyResponse?.message, Toast.LENGTH_SHORT).show()
+                    Handler(Looper.getMainLooper()).postDelayed({
+                        activityResult()
+                    }, 5000)
+
                 }
                 override fun onFailure(call: Call<ImageResponse>, t: Throwable) {
                     Log.d("farid", t.toString())
@@ -161,7 +166,7 @@ class TakePhotoFragment : DialogFragment() {
             val intent1 = Intent(context, MapActivity::class.java)
             intent1.putExtra(KEY_PHOTO, reportEntity)
             resultLauncer.launch(intent1)
-        } else if(conditionGallery == 2){
+        } else{
             val intent2 = Intent(context, CategoryActivity::class.java)
             intent2.putExtra(KEY_PHOTO, reportEntity)
             resultLauncer.launch(intent2)

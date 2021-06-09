@@ -41,7 +41,6 @@ class InputDescriptionActivity : AppCompatActivity() {
 
 
         binding.floatingActionButton.setOnClickListener{ view ->
-
             reportEntity.description = binding.textField.text.toString()
             val intent = Intent(this@InputDescriptionActivity, ConfirmationReportActivity::class.java)
             intent.putExtra(KEY_DESCRIPTION, reportEntity)
